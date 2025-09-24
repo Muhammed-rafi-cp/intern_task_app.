@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/task_1.dart';
+import 'pages/task_2.dart'; // 👈 add this import
 
 void main() {
   runApp(const MyApp());
@@ -41,18 +42,29 @@ class HomePage extends StatelessWidget {
               child: ListTile(
                 title: Text(
                   tasks[index],
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 trailing: const Icon(Icons.arrow_forward),
                 onTap: () {
-                    // Navigate to Task-1 page
-                  if (tasks[index] == 'Task-1') {
+                  if (index == 0) {
+                    // Task 1
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const Task1Page()),
+                      MaterialPageRoute(builder: (_) => const Task1Page()),
                     );
-                  }// Here we will navigate to task details page later
+                  } else if (index == 1) {
+                    // Task 2
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) =>  Task2Page()),
+                    );
+                  } else {
+                    // For future tasks
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("${tasks[index]} not ready yet!")),
+                    );
+                  }
                 },
               ),
             );
