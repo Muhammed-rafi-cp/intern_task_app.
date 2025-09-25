@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/task_1.dart';
-import 'pages/task_2.dart'; // 👈 add this import
+import 'pages/task_2.dart'; 
+import 'pages/task_3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,10 +60,10 @@ class HomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(builder: (_) =>  Task2Page()),
                     );
-                  } else {
-                    // For future tasks
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("${tasks[index]} not ready yet!")),
+                  } else if (index == 2) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const Task3Page()),
                     );
                   }
                 },

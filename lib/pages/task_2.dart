@@ -40,7 +40,7 @@ class Task2Page extends StatelessWidget {
                       .where((e) => favs.contains(e.key))
                       .toList()
                   : images.asMap().entries.toList();
-
+                  
               return GridView.builder(
                 padding: const EdgeInsets.all(8),
                 itemCount: displayImages.length,
