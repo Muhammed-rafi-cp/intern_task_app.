@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Task2Page extends StatelessWidget {
   Task2Page({super.key});
-
+  
   // A list of image sources (mix local + network)
   final List<String> images = [
     "assets/images/img1.jpg",
