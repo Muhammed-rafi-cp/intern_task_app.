@@ -8,6 +8,7 @@ import 'pages/task_6.dart';
 import 'pages/task_7.dart';
 import 'pages/task_8.dart';
 import 'pages/task_5_add.dart';
+import 'pages/task_6_add.dart';
 
 
 void main() {
@@ -101,6 +102,11 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (_) => Task5addPage()),
+                    );
+                  }else if (index == 9) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => Task6addPage()),
                     );
                   }
                 },
